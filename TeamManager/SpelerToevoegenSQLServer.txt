@@ -1,0 +1,11 @@
+// geef het aangemaakte team mee als json in de http header.
+            Team team = new Team{naam = Teamnaam.Text, land = Land.Text, competitie = Competitie.Text};
+            string teamJson = JsonConvert.SerializeObject(team);
+            HttpClient client = new HttpClient();
+            StringContent HttpContent = new StringContent(teamJson);
+            HttpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/Json");
+
+            await client.PostAsync("https://localhost:44352/api/teams", HttpContent);
+
+
+

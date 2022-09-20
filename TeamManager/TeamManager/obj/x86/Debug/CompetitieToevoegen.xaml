@@ -1,0 +1,56 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="TeamManager.CompetitieToevoegen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="10,20,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Competitie toevoegen" FontSize="30" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBox x:ConnectionId='2' x:Name="CompetitieTextBox" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>
+            <TextBlock Text="Naam competitie:" FontSize="15" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Button x:ConnectionId='3' Content="Toevoegen" FontSize="20" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Center"                         />
+            <Button x:ConnectionId='4' x:Name="Backbutton" 
+                    Style="{StaticResource NavigationBackButtonNormalStyle}"
+                                                                      
+                    ToolTipService.ToolTip="Back" VerticalAlignment="Top"                         />
+            <muxc:InfoBar x:ConnectionId='5' x:Name="CompetitieToegevoegd"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Title="Succes"
+                 Severity="Success"
+                 Message="Competitie toegevoegd.">
+            </muxc:InfoBar>
+            <muxc:InfoBar x:ConnectionId='6' x:Name="VeldenNietIngevuld"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Title="Error"
+                 Severity="Error"
+                 Message="Zorg dat alle velden ingevuld zijn.">
+            </muxc:InfoBar>
+            <muxc:InfoBar x:ConnectionId='7' x:Name="CompetitieBestaatAl"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Title="Error"
+                 Severity="Error"
+                 Message="Deze competitie bestaat al.">
+            </muxc:InfoBar>
+            <muxc:InfoBar x:ConnectionId='8' x:Name="CompetitieNaamTeLang"  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 Title="Error"
+                 Severity="Error"
+                 Message="Zorg dat de naam niet langer is dan 20 tekens.">
+            </muxc:InfoBar>
+        </Grid>
+    </Grid>
+</Page>
+

@@ -1,0 +1,66 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dataaccesslibrary="using:DataAccessLibrary"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    x:Class="TeamManager.Stand"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="10,20,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="383*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" x:Name="Hoofdmenu" Height="46"  TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="30"  Text="Stand" Width="75" />
+            <ListView x:Name="StandList"  HorizontalAlignment="Stretch"    Width="500" Grid.Row="2"  Height="550" VerticalAlignment="Stretch" 
+                      Header="             Team                              GS       W       G       V       DV      DT      DS      P ">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="dataaccesslibrary:TeamStatistieken">
+                        <Grid  Width="500" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="postitie"  Grid.Column="0" Text="{x:Bind positie}"  
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="1" Text="{x:Bind team}"  
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="2"  Text="{x:Bind gespeeld}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="3"  Text="{x:Bind gewonnen}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="4"  Text="{x:Bind gelijk}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="5"  Text="{x:Bind verloren}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="6"  Text="{x:Bind doelpuntenVoor}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="7"  Text="{x:Bind doelpuntenTegen}" 
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="8"  Text="{x:Bind doelsaldo}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="9" Text="{x:Bind punten}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

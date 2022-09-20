@@ -1,0 +1,68 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="TeamManager.TeamInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dataaccesslibrary="using:DataAccessLibrary"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="10,20,10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="72*"/>
+                <RowDefinition Height="58*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="685*"/>
+                <RowDefinition Height="100*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:ConnectionId='2' Grid.Row="1" Grid.Column="2" x:Name="Team" HorizontalAlignment="Center"   TextWrapping="Wrap" VerticalAlignment="Center"   FontSize="30" Text="Team " Height="40" Width="70"  Grid.RowSpan="1" Grid.ColumnSpan="2" />
+            <TextBlock HorizontalAlignment="Center" Height="40" Text="Spelers" TextWrapping="Wrap" VerticalAlignment="Center"  FontSize="20" Grid.Row="2" Grid.Column="1" Width="64" Grid.RowSpan="1" Grid.ColumnSpan="1"/>
+            <ListView x:ConnectionId='3' x:Name="Spelers"                                                    HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="450" Width="350"  Grid.Row="3" Grid.Column="1"  SelectionMode="None" IsItemClickEnabled="True"                          >
+                <CollectionViewSource x:ConnectionId='9' x:Name="SpelerCVC" IsSourceGrouped="True"/>
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid Width="300" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding naam}"/>
+                            <TextBlock HorizontalAlignment="Right" Grid.Column="1" Text="{Binding positie}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Key}" FontSize="15" FontWeight="Bold" />
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+            </ListView>
+            <TextBlock HorizontalAlignment="Center" Height="40" Text="Coach" TextWrapping="Wrap" VerticalAlignment="Center"  FontSize="20" Grid.Row="2" Width="55" Grid.Column="4" />
+            <ListView x:ConnectionId='4' x:Name="Coach"
+                      SelectionMode="None" IsItemClickEnabled="True"
+                      HorizontalAlignment="Stretch" Height="509"  VerticalAlignment="Stretch" Width="350" Grid.Row="3" Grid.Column="4" />
+            <Button x:ConnectionId='5' Name="CoachToevoegen" Height="35" Width="100" FontSize="15"  Content="toevoegen" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"                             />
+            <Button x:ConnectionId='6' Name="CoachVerwijderen" Content="Verwijderen" Height="35" HorizontalAlignment="Center" Width="110" FontSize="15" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="2"                               />
+            <Button x:ConnectionId='7' Name="SpelerVerwijderen" Content="Verwijderen" Height="35" Width="110" FontSize="15" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"                                />
+            <Button x:ConnectionId='8' Name="SpelerToevoegen" Content="Toevoegen" Height="35"  Width="100" FontSize="15" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"                              />
+        </Grid>
+    </Grid>
+</Page>
+

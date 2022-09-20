@@ -1,0 +1,91 @@
+ <ListView x:Name="StandList"  HorizontalAlignment="Stretch"    Width="500" Grid.Row="2"  Height="550" VerticalAlignment="Stretch" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListViewItem">
+                                    <Grid>
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="dataaccesslibrary:TeamStatistieken">
+                        <Grid  Width="500" VerticalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="postitie"  Grid.Column="0" Text="{x:Bind positie}"  
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="1" Text="{x:Bind team}"  
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="2"  Text="{x:Bind gespeeld}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="3"  Text="{x:Bind gewonnen}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="4"  Text="{x:Bind gelijk}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="5"  Text="{x:Bind verloren}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="6"  Text="{x:Bind doelpuntenVoor}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="7"  Text="{x:Bind doelpuntenTegen}" 
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="8"  Text="{x:Bind doelsaldo}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                            <TextBlock  Grid.Column="9" Text="{x:Bind punten}"  
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock  Grid.Column="1" Text="Team"/>
+                                <TextBlock  Grid.Column="2" Text="GS"/>
+                                <TextBlock  Grid.Column="3" Text="W"/>
+                                <TextBlock  Grid.Column="4" Text="G"/>
+                                <TextBlock  Grid.Column="5" Text="V"/>
+                                <TextBlock  Grid.Column="6" Text="DV"/>
+                                <TextBlock  Grid.Column="7" Text="DT"/>
+                                <TextBlock  Grid.Column="8" Text="DS"/>
+                                <TextBlock  Grid.Column="9" Text="P"/>
+                            </Grid>
+                            <ItemsPresenter Grid.Row="1" ></ItemsPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </ListView.Template>
+            </ListView>

@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="TeamManager.InfoSpeler"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="10,20,10,20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Info speler" FontSize="30" Height="40" Width="150" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Naam:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Text="Leeftijd:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock Text="Lengte:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock Text="Gewicht:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1"/>
+            <TextBlock Text="Positie:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock Text="Nummer:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="1"/>
+            <TextBlock Text="Doelpunten:" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="8" Grid.Column="1"/>
+            <TextBlock Text="Info speler" FontSize="30" Height="40" Width="150" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+            
+            <TextBlock x:ConnectionId='2' x:Name="Naam"  FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='3' x:Name="Leeftijd"  FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='4' x:Name="Lengte"  FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='5' x:Name="gewicht"  FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='6' x:Name="Positie" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='7' x:Name="Nummer" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="2"/>
+            <TextBlock x:ConnectionId='8' x:Name="Doelpunten" FontSize="20" Height="40" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="8" Grid.Column="2"/>
+            <Button x:ConnectionId='9' Content="Terug" FontSize="20" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"                          />
+            <Button x:ConnectionId='10' x:Name="BewerkenButton" Content="Bewerken" FontSize="20" Grid.Row="9" Grid.Column="3" HorizontalAlignment="Center"                       />
+        </Grid>
+    </Grid>
+</Page>
+

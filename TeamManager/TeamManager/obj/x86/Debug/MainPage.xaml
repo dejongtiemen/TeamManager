@@ -1,0 +1,49 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="TeamManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="1920.4" d:DesignHeight="1055.2">
+    
+    <Grid>
+        <Grid Margin="10,20,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:ConnectionId='2' Grid.Column="1" x:Name="Hoofdmenu" HorizontalAlignment="Center" Height="47"  TextWrapping="Wrap" VerticalAlignment="Center"                                                FontSize="30" Text="Teams" />
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" Height="26"  Text="Selecteer een Team" TextWrapping="Wrap" VerticalAlignment="Center" Width="210" FontSize="20"/>
+            <TextBlock Text="Selecteer een competitie" FontSize="20" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <ComboBox x:ConnectionId='3' x:Name="CompetitiesCbbx" FontSize="15" Grid.Column="1" Grid.Row="1" Width="280" VerticalAlignment="Center" HorizontalAlignment="Center"                                                                                   AllowDrop="True" />
+            <Button x:ConnectionId='4' Grid.Row="3" Grid.Column="2" x:Name="TeamToevoegen" Content="Toevoegen" Height="40"  FontSize="20" HorizontalAlignment="Center"                            />
+            <Button x:ConnectionId='5' x:Name="TeamVerwijderen" Content="Verwijderen" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center"  Height="40" FontSize="20"                                  />
+            <Button x:ConnectionId='6' Content="Verwijderen" FontSize="20" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"                                    />
+            <Button x:ConnectionId='7' Content="Toevoegen" FontSize="20" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"                                  />
+            <ListView x:ConnectionId='8' x:Name="Teamselectie"                       
+                      Grid.Column="1" HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch"  Grid.Row="2" Height="370" Width="280"
+                      SelectionMode="None" IsItemClickEnabled="True"                            >
+            </ListView>
+            <ContentDialog x:ConnectionId='9' x:Name="competitieVerwijderenContentDialog" Grid.Column="1" Grid.Row="2" Title="Competitie verwijderen" Content="Deze competitie en alle teams en spelers in deze competitie verwijderen?" PrimaryButtonText="Verwijderen" CloseButtonText="Cancel"/>
+            <muxc:InfoBar x:ConnectionId='10'
+                x:Name="CompetitieVerwijderdInfoBar"
+                Grid.Column="1" Grid.Row="2"
+                IsOpen="False"
+                Severity="Success"
+                Title="Success"
+                Message="Competitie verwijderd." />
+        </Grid>
+    </Grid>
+</Page>
+

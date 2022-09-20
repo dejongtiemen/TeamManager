@@ -1,0 +1,16 @@
+ // clienthandler om error voor ongeldige certificatie te omzeilen.
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            HttpClient client = new HttpClient(clientHandler);
+
+            // lijst van teams vragen van db via webservice en dan in de listview weegeven.          
+            string JsonResponse = await client.GetStringAsync("https://localhost:44352/api/teams");
+            JsonSerializerOptions options = new JsonSerializerOptions()
+            {
+                ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve,
+                WriteIndented = true
+            };
+
+            List<Team> teamResult = System.Text.Json.JsonSerializer.Deserialize<List<Team>>(JsonResponse, options);
+
+            Teamselectie.ItemsSource = teamResult;

@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="TeamManager.TeamOverzicht"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TeamManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Windows.UI.Xaml.Controls"  
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <muxc:NavigationView PaneDisplayMode="Top" x:Name="NavigationViewControl" IsBackEnabled="True" Loaded="NavigationViewControl_Loaded" SelectionChanged="NavigationViewControl_SelectionChanged" BackRequested="NavigationViewControl_BackRequested" IsSettingsVisible="False">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="Team" x:Name="Team" Tag="Team"/>
+                <muxc:NavigationViewItem Content="Stand" x:Name="Stand" Tag="Stand" />
+                <muxc:NavigationViewItem Content="Uitslagen" x:Name="Uitslagen" Tag="Uitslagen" />
+                <muxc:NavigationViewItem Content="Topscorers" x:Name="Topscorers" Tag="Topscorers"/>
+            </muxc:NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </muxc:NavigationView>
+        
+    </Grid>
+</Page>

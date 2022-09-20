@@ -1,0 +1,2 @@
+C:\Users\Gebruiker\Desktop\Informatica\2.Hoofdfase\13. Visual C#\TeamManager\DataAccessLibrary\DataAccessLibrary.csproj;x86
+C:\Users\Gebruiker\Desktop\Informatica\2.Hoofdfase\13. Visual C#\TeamManager\TeamManager\TeamManager.csproj;x86
